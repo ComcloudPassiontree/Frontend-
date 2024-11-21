@@ -1,15 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+import palette from "./src/ui/theme/palette"
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        purple: "#7B61FF",
-        charcoal: "#222222",
-        red: "#FC5555",
-        green: "#29CC6A",
-        blue: "#0099FF",
-        white: "#FFFFFF",
+        ...palette
       },
     },
     fontFamily: {

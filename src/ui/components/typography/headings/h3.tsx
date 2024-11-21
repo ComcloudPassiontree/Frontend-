@@ -10,7 +10,10 @@ export default function H3(props: Props) {
   return (
     <h3
       {...rest}
-      className={clsx(getTypographyClasses(className, bold), "text-[24px]")}
+      className={clsx(
+        getTypographyClasses(className, bold),
+        "text-[20px] lg:text-[24px]"
+      )}
       data-testid={testId}
     >
       {children}

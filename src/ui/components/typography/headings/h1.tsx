@@ -10,7 +10,10 @@ export default function H1(props: Props) {
   return (
     <h1
       {...rest}
-      className={clsx(getTypographyClasses(className, bold), "text-[40px]")}
+      className={clsx(
+        getTypographyClasses(className, bold),
+        "text-[32px] lg:text-[40px]"
+      )}
       data-testid={testId}
     >
       {children}

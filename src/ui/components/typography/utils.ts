@@ -1,10 +1,9 @@
-export const TYPOGRAPHY_CLASSES = "text-[40px] font-primary"
-export const BOLD_FONT_WEIGHT = 700
+export const TYPOGRAPHY_CLASSES = "font-primary"
 
 export const getTypographyClasses = (customClassName?:string, bold?:boolean) => {
     let classNames = [TYPOGRAPHY_CLASSES];
     if(bold){
-        classNames.push(`font-[${BOLD_FONT_WEIGHT}]`)
+        classNames.push(`font-[700]`)
     }
     if(customClassName){
         classNames.push(customClassName)
