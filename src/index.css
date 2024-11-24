@@ -4,6 +4,11 @@
 
 :root {
   --color-bg:#FAF2E8;
+  --color-danger:#FFADAD;
+  --color-success:#6BB84F;
+  --color-neutral:#FFFFFF;
+  --color-warning:#F8D6B3;
+  --color-black:#000000
 }
 
 body {

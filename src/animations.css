@@ -1,3 +1,15 @@
+.delay1{
+  animation-delay: 0.1s !important;
+}
+.delay2{
+  animation-delay: 0.3s !important;
+}
+.delay3{
+  animation-delay: 0.5s !important;
+}
+.delay4{
+  animation-delay: 0.7s !important;
+}
 @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -16,8 +28,9 @@
   }
 
 
-.fadeIn {
+.fade-in {
     animation: fadeIn 0.4s ease-in-out;
+    animation-fill-mode: backwards;
   }
   
   @keyframes fadeIn {

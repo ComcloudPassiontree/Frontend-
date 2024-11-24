@@ -12,7 +12,7 @@ export default memo(function Stepper({ steps }: { steps: StepperType }) {
   )[0];
   return (
     <>
-      <div className="h-[50px] w-full max-w-[800px] hidden lg:flex stepper">
+      <div className="h-[50px] w-full max-w-[800px] hidden lg:flex stepper fade-in">
         {steps.map((item) => {
           return (
             <div

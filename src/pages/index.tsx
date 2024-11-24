@@ -13,7 +13,7 @@ export default function Root() {
   }, []);
   return (
     <div>
-      {/*todo: don't hardcode show loader*/}
+      {/*todo: don't hardcode loader*/}
       {showLoader && <Loader />}
       {!showLoader && <Outlet />}
     </div>

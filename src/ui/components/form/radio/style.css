@@ -1,0 +1,32 @@
+.app-radio-button input[type="radio"] {
+    display: none;
+  }
+  
+  .app-radio-button label {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 1.5px solid var(--color-black);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .app-radio-button label::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Hidden when not checked */
+    transition: opacity 0.2s ease;
+  }
+  
+  .app-radio-button input[type="radio"]:checked + label::after {
+    opacity: 1; /* Show the dot when checked */
+  }

@@ -4,6 +4,8 @@ import Phase1 from "../pages/employee/onboarding/phase1";
 import PersonalInformation from "../pages/employee/onboarding/phase1/personal-information";
 import Root from "../pages";
 import Welcome from "../pages/employee/onboarding/phase1/welcome";
+import PhoneVerification from "../pages/employee/onboarding/phase1/phone-verification";
+import JobDetails from "../pages/employee/onboarding/phase1/job-details";
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const routes = createBrowserRouter([
               {
                 path: "personal-information",
                 element: <PersonalInformation />,
+              },
+              {
+                path: "phone-verification",
+                element: <PhoneVerification />,
+              },
+              {
+                path: "job-details",
+                element: <JobDetails />,
               },
             ],
           },

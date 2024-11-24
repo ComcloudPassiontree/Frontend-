@@ -1,6 +1,7 @@
-import { CSSProperties, ReactNode } from "react"
+import React, { CSSProperties, ReactNode } from "react"
 
-export interface ComponentTypes {
+
+export interface ComponentTypes extends React.HTMLAttributes<any>{
     testId?:string
     style?: CSSProperties
     className?: string
@@ -10,3 +11,11 @@ export interface ComponentTypes {
 
 export interface BaseComponentTypes extends ComponentTypes {}
 export interface BaseComponentProps extends ComponentTypes {}
+
+
+export interface BaseInputComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    testId?:string
+    style?: CSSProperties
+    className?: string
+    children?:ReactNode
+}

@@ -13,10 +13,10 @@ function Header(props: Props) {
       {...rest}
       className={clsx(
         className,
-        "h-[56px] md:h-[96px] border-b-2 border-black py-[7px] md:py-[25px]"
+        "h-[56px] md:h-[96px] border-b-2 border-black py-[7px] md:py-[25px] bg-bg"
       )}
     >
-      <div className="max-w-[1280px] w-[96%] mx-[auto] gap-[0px] xl:gap-[110px] flex justify-between items-center md:items-start">
+      <div className="max-w-[1280px] w-[96%] h-full mx-[auto] gap-[0px] xl:gap-[110px] flex justify-between items-center">
         <Logo />
         <div className="xl:flex-1">{children}</div>
       </div>

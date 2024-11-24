@@ -12,7 +12,7 @@ export default function H1(props: Props) {
       {...rest}
       className={clsx(
         getTypographyClasses(className, bold),
-        "text-[32px] lg:text-[40px]"
+        "text-[32px] lg:text-[40px] leading-[48px]"
       )}
       data-testid={testId}
     >

@@ -6,8 +6,8 @@ import Button from "../../../../../ui/components/button/button";
 
 function Welcome() {
   return (
-    <div className="w-[90%] max-w-[840px] fade-in-up">
-      <H1 bold>Hi Pinkett,</H1>
+    <div className="w-full max-w-[840px] fade-in-up">
+      <H1 bold>Hi Emerald,</H1>
       <Paragraph1 className="mt-[4px]">
         You have been invited by winter to set up your account in order to
         proceed with you application.
