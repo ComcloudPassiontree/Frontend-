@@ -20,10 +20,10 @@ function PersonalInformation() {
           </H4>
         </div>
 
-        <div className="flex justify-between flex-wrap w-full mt-6 gap-[26px] md:gap-0">
+        <div className="flex justify-between flex-wrap w-full mt-6 gap-[26px]">
           <Input label="First Name" className="flex-1/2" value="Emerald" />
           <Input label="Middle Name" className="flex-1/2" />
-          <Input label="Last Name" className="flex-1/2 mt-0 md:mt-[26px]" />
+          <Input label="Last Name" className="flex-1/2 mt-0" />
         </div>
 
         <div className="border-b-[1px] border-grey-400 w-full pb-[7px] mb-2">

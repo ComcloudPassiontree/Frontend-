@@ -13,7 +13,7 @@ function Input(props: Props) {
   const { classes, getInputLabel } = useInput(label);
 
   return (
-    <div className={clsx("min-w-[200px] flex-grow", className)} style={style}>
+    <div className={clsx("flex-grow", className)} style={style}>
       {getInputLabel()}
       <input {...rest} className={classes} style={inputStyle} />
     </div>
