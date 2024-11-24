@@ -1,10 +1,6 @@
 import { ToggleSlider } from "react-toggle-slider";
 
-interface Props {}
-
-function Toggle(props: Props) {
-  const {} = props;
-
+function Toggle() {
   return (
     <div style={{ transform: "scale(0.8)" }}>
       <ToggleSlider
