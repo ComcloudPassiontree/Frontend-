@@ -21,7 +21,7 @@ function PhoneVerification() {
     }, 2000);
 
     return () => clearTimeout(tId);
-  }, []);
+  }, [navigate]);
   return (
     <div className="w-full flex flex-col gap-4 md:gap-[0px] md:flex-row justify-left">
       <div className="basis-1/3 mt-1 fade-in">
