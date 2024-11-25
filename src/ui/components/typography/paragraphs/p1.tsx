@@ -10,7 +10,7 @@ export default function Paragraph1(props: Props) {
   return (
     <p
       {...rest}
-      className={clsx(getTypographyClasses(className, bold), "text-[16px]")}
+      className={clsx(getTypographyClasses(className, bold), "text-[14px] md:text-[16px]")}
       data-testid={testId}
     >
       {children}
