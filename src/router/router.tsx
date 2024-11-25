@@ -6,6 +6,7 @@ import Root from "../pages";
 import Welcome from "../pages/employee/onboarding/phase1/welcome";
 import PhoneVerification from "../pages/employee/onboarding/phase1/phone-verification";
 import JobDetails from "../pages/employee/onboarding/phase1/job-details";
+import Error404 from "../pages/error/error-404";
 
 const routes = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
           },
         ],
       },
+      {
+        path:"*",
+        element: <Error404 />
+      }
     ],
   },
 ]);
