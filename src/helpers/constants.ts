@@ -1,5 +1,7 @@
 import { Condition } from "../ui/components/form/input-conditions/types";
 
+export const MODAL_CONTAINER = "modal-container"
+
 export const passwordConditions: Condition[] = [
     {
       title: "an uppercase letter",
