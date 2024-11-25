@@ -18,4 +18,9 @@ export interface BaseInputComponentProps extends React.InputHTMLAttributes<HTMLI
     style?: CSSProperties
     className?: string
     children?:ReactNode
+    label?: string | number;
+    hasError?:boolean;
+    errorText?:string;
+    hasSuccess?:boolean
+    successText?:string;
 }

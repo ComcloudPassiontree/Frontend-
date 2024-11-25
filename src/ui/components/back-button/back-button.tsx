@@ -7,15 +7,14 @@ import clsx from "clsx";
 
 interface Props extends BaseComponentProps {
   to: string;
-  absolutePath?: boolean;
 }
 
 function BackButton(props: Props) {
-  const { to, absolutePath, className } = props;
+  const { to, className } = props;
 
   return (
     <Link
-      to={absolutePath ? to : appendUrlParts(to)}
+      to={appendUrlParts(to)}
       className={clsx(
         "flex items-center transition gap-2 -ml-0 hover:-ml-[3px] w-max",
         className

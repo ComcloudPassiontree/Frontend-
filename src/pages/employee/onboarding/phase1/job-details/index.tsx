@@ -12,7 +12,7 @@ function JobDetails() {
       <div className="basis-1/3 mt-1 fade-in">
         <BackButton to="phone-verification" />
       </div>
-      <div className="basis-1/3 ml-2 max-w-[417px] fade-in-up ">
+      <div className="basis-1/3 ml-2 md:min-w-[417px] max-w-[417px] fade-in-up ">
         <H1 bold>Information and Eligibility</H1>
         <div className="border-b-[1px] border-grey-400 w-full pb-[7px] mb-2">
           <H3 bold className="mt-[24px]">
@@ -54,7 +54,7 @@ function JobDetails() {
             <Radio label="No" name="visa" id="no" />
           </div>
         </div>
-        <Button to="phone-verification" className="mt-10 w-full">
+        <Button to="create-password" className="mt-10 w-full">
           Continue
         </Button>
       </div>

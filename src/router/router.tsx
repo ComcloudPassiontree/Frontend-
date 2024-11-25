@@ -7,6 +7,7 @@ import Welcome from "../pages/employee/onboarding/phase1/welcome";
 import PhoneVerification from "../pages/employee/onboarding/phase1/phone-verification";
 import JobDetails from "../pages/employee/onboarding/phase1/job-details";
 import Error404 from "../pages/error/error-404";
+import CreatePassword from "../pages/employee/onboarding/phase1/create-password";
 
 const routes = createBrowserRouter([
   {
@@ -37,14 +38,18 @@ const routes = createBrowserRouter([
                 path: "job-details",
                 element: <JobDetails />,
               },
+              {
+                path: "create-password",
+                element: <CreatePassword />,
+              },
             ],
           },
         ],
       },
       {
-        path:"*",
-        element: <Error404 />
-      }
+        path: "*",
+        element: <Error404 />,
+      },
     ],
   },
 ]);

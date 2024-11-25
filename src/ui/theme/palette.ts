@@ -6,11 +6,14 @@ const palette = {
   black: "var(--color-black)",
   purple: "#5F4FE6",
   charcoal: "#222222",
-  red: "#FC5555",
+  red: {
+    100: "#FC5555",
+    200: "#CC1A06"
+  },
   green: {
-    100:"#3CC908",
-    200:"#29CC6A",
-    300:"#047807"
+    100: "#3CC908",
+    200: "#29CC6A",
+    300: "#047807",
   },
   blue: "#0099FF",
   pending: "#FFFFFF",
@@ -23,4 +26,4 @@ const palette = {
   },
 };
 
-export default palette
+export default palette;

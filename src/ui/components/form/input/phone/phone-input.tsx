@@ -11,8 +11,9 @@ interface Props extends BaseInputComponentProps {
 }
 
 function PhoneInput(props: Props) {
-  const { className, style, inputStyle, label, ...rest } = props;
-  const { classes, getInputLabel } = useInput(label);
+  const { className, style, inputStyle } = props;
+  const { classes, getInputLabel, getExtraInputContent, inputProps } =
+    useInput(props);
 
   return (
     <div
@@ -22,7 +23,7 @@ function PhoneInput(props: Props) {
       {getInputLabel()}
 
       <input
-        {...rest}
+        {...inputProps}
         className={clsx(classes, "pl-[104px]")}
         style={inputStyle}
       />
@@ -32,6 +33,8 @@ function PhoneInput(props: Props) {
         </div>
         <Paragraph2 className="ml-3">+44</Paragraph2>
       </div>
+
+      {getExtraInputContent?.()}
     </div>
   );
 }

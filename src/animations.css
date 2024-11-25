@@ -1,47 +1,90 @@
-.delay1{
+.delay1 {
   animation-delay: 0.1s !important;
 }
-.delay2{
+.delay2 {
   animation-delay: 0.3s !important;
 }
-.delay3{
+.delay3 {
   animation-delay: 0.5s !important;
 }
-.delay4{
+.delay4 {
   animation-delay: 0.7s !important;
 }
 @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .fade-in-up {
-    animation: fadeInUp 0.4s ease-out;
-    animation-delay: 0.15s;
-    animation-fill-mode: backwards;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
+.fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
+  animation-delay: 0.15s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up-big {
+  animation: fadeInUpBig 0.4s ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(400px);
+  }
+}
+
+.fade-out-up-big {
+  animation: fadeOutUpBig 0.4s ease-out;
+}
 
 .fade-in {
-    animation: fadeIn 0.4s ease-in-out;
-    animation-fill-mode: backwards;
+  animation: fadeIn 0.4s ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
   }
-  
-  .transition {
-    transition: all 0.3s ease;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
+  to {
+    opacity: 0;
+  }
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
