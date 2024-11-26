@@ -30,7 +30,7 @@ function SuccessModal(props: SuccessModalProps) {
       close={close}
       disableClose={disableClose}
       hideCloseBtn={!!buttonConfig?.title || hideCloseBtn}
-      className="py-12 px-8 flex items-center justify-center flex-col text-center gap-3"
+      className="py-12 px-4 md:px-8 flex items-center justify-center flex-col text-center gap-3"
     >
       <SealCheck />
       <H3 bold>{title}</H3>

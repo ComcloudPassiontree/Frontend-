@@ -48,14 +48,14 @@ function Modal(props: ModalProps) {
       ></div>
       <div
         className={clsx(
-          "absolute z-11 w-full bg-bg h-auto py-[55px] bottom-0",
+          "absolute z-11 w-full bg-bg h-auto py-[20px] md:py-[55px] bottom-0",
           isExit ? "fade-out-up-big" : "fade-in-up-big"
         )}
       >
         <div
           className={clsx(
             className,
-            "w-[458px] border-black border-2 rounded-[8px] bg-white mx-auto box-border"
+            "w-[90%] max-w-[458px] border-black border-2 rounded-[8px] bg-white mx-auto box-border"
           )}
         >
           {children}
