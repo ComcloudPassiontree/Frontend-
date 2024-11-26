@@ -38,7 +38,7 @@ function Modal(props: ModalProps) {
   return (
     <div
       className={clsx(
-        "absolute top-0 w-full h-full z-10",
+        "absolute top-0 w-full h-screen z-10",
         isExit ? "fade-out" : "fade-in"
       )}
     >
