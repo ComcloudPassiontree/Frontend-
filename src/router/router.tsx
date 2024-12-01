@@ -8,12 +8,17 @@ import PhoneVerification from "../pages/employee/onboarding/phase1/phone-verific
 import JobDetails from "../pages/employee/onboarding/phase1/job-details";
 import Error404 from "../pages/error/error-404";
 import CreatePassword from "../pages/employee/onboarding/phase1/create-password";
+import Login from "../pages/auth/login";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
+      {
+        path:"/login",
+        element: <Login />
+      },
       {
         path: "/employee/onboarding/",
         element: <Onboarding />,

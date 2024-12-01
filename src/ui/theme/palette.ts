@@ -7,6 +7,7 @@ const palette = {
   purple: "#5F4FE6",
   charcoal: "#222222",
   red: {
+    50:"#FFC9C9",
     100: "#FC5555",
     200: "#CC1A06"
   },

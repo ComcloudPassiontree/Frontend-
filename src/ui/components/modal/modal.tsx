@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { BaseComponentProps } from "../types";
 import clsx from "clsx";
 import Button from "../button/button";
@@ -10,7 +10,7 @@ export interface ModalProps extends BaseComponentProps {
 }
 
 function Modal(props: ModalProps) {
-  const { className, children, close, hideCloseBtn, disableClose } = props;
+  const { children, close, hideCloseBtn, disableClose } = props;
   const [isExit, setIsExit] = useState(false);
 
   const closeModal = useCallback(() => {
@@ -52,16 +52,15 @@ function Modal(props: ModalProps) {
           isExit ? "fade-out-up-big" : "fade-in-up-big"
         )}
       >
-        <div
-          className={clsx(
-            className,
-            "w-[90%] max-w-[458px] border-black border-2 rounded-[8px] bg-white mx-auto box-border"
-          )}
-        >
-          {children}
-
-          {!hideCloseBtn && <Button onClick={closeModal}>Close</Button>}
-        </div>
+        {!hideCloseBtn && (
+          <Button
+            onClick={closeModal}
+            className="absolute right-0 top-0 m-7 bg-red-50 capitalize text-black px-[10px]"
+          >
+            Close
+          </Button>
+        )}
+        {children}
       </div>
     </div>
   );

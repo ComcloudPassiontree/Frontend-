@@ -1,9 +1,8 @@
 import { memo } from "react";
 import Modal, { ModalProps } from "../modal";
-import Paragraph2 from "../../typography/paragraphs/p2";
 import Button from "../../button/button";
-import H3 from "../../typography/headings/h3";
 import { ReactComponent as SealCheck } from "../../../../assets/images/SealCheck.svg";
+import ModalCard from "../components/modal-card";
 
 export interface SuccessModalProps extends ModalProps {
   title?: string;
@@ -29,20 +28,18 @@ function SuccessModal(props: SuccessModalProps) {
     <Modal
       close={close}
       disableClose={disableClose}
-      hideCloseBtn={!!buttonConfig?.title || hideCloseBtn}
-      className="py-12 px-4 md:px-8 flex items-center justify-center flex-col text-center gap-3"
+      hideCloseBtn={hideCloseBtn}
     >
-      <SealCheck />
-      <H3 bold>{title}</H3>
-      <Paragraph2 className="my-1">{description}</Paragraph2>
-      {buttonConfig && (
-        <Button
-          {...(buttonConfig?.href && { href: buttonConfig?.href })}
-          {...(buttonConfig?.onClick && { onClick: buttonConfig?.onClick })}
-        >
-          {buttonConfig?.title}
-        </Button>
-      )}
+      <ModalCard icon={<SealCheck />} title={title} description={description}>
+        {buttonConfig && (
+          <Button
+            {...(buttonConfig?.href && { href: buttonConfig?.href })}
+            {...(buttonConfig?.onClick && { onClick: buttonConfig?.onClick })}
+          >
+            {buttonConfig?.title}
+          </Button>
+        )}
+      </ModalCard>
     </Modal>
   );
 }
