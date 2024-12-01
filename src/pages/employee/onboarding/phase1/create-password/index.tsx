@@ -78,7 +78,7 @@ function CreatePassword() {
                 "Thank you for creating your account, please login to securely continue your application.",
               buttonConfig: {
                 title: "login",
-                href: "/employee/login",
+                href: "/auth/login",
               },
               disableClose: true,
             })

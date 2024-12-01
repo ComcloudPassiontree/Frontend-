@@ -9,6 +9,7 @@ import JobDetails from "../pages/employee/onboarding/phase1/job-details";
 import Error404 from "../pages/error/error-404";
 import CreatePassword from "../pages/employee/onboarding/phase1/create-password";
 import Login from "../pages/auth/login";
+import Auth from "../pages/auth";
 
 const routes = createBrowserRouter([
   {
@@ -16,8 +17,14 @@ const routes = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path:"/login",
-        element: <Login />
+        path: "/auth",
+        element: <Auth />,
+        children: [
+          {
+            path: "login",
+            element: <Login />,
+          },
+        ],
       },
       {
         path: "/employee/onboarding/",

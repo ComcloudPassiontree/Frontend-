@@ -21,6 +21,7 @@ export const getButtonClasses = (variant:string, className?:string, isDisabled?:
         "text-white",
         !className?.includes("w-") && "w-max",
         "transition",
+        "no-underline",
         "block",
         !isDisabled && `hover:scale-[1.03] bg-${variant}-900`,
         className

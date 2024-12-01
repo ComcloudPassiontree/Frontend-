@@ -1,11 +1,12 @@
 import { memo } from "react";
-import { BaseComponentProps } from "../types";
+import { BaseInputComponentProps } from "../types";
 import Paragraph1 from "../typography/paragraphs/p1";
 import { Link } from "react-router-dom";
 import { appendUrlParts, getButtonClasses } from "./utils";
 import { ReactComponent as Loader } from "../../../assets/images/progress.svg";
+import clsx from "clsx";
 
-interface Props extends BaseComponentProps {
+interface Props extends BaseInputComponentProps {
   href?: string;
   variant?: "purple" | "bg";
   largeText?: boolean;
@@ -41,9 +42,13 @@ function Button(props: Props) {
         disabled={disabled || isLoading}
         className={classes}
       >
+        {/*todo: get text color dynamically or define variants*/}
         <Paragraph1
           bold
-          className="text-center"
+          className={clsx(
+            "text-center",
+            className?.includes("text-black") && "text-black"
+          )}
           style={{ ...(largeText && { fontSize: 18 }) }}
         >
           {isLoading ? <Loader className="animate-spin mx-auto" /> : children}

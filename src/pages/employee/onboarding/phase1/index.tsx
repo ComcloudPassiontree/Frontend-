@@ -5,6 +5,7 @@ import Stepper from "../../../../ui/components/stepper/stepper";
 import SecondaryHeader from "../../../../ui/components/header/secondary-header";
 import { StepperEnums } from "../../../../ui/components/stepper/types";
 import { useLocation } from "react-router-dom";
+import AuthOnboardingLayout from "../../../../ui/layouts/auth-onboarding-layout";
 
 const steps = [
   {
@@ -52,15 +53,11 @@ function Phase1() {
   });
 
   return (
-    <div className="fade-in">
-      <div className="w-full fixed top-0 z-[9]">
-        <Header>{!isWelcomePage && <Stepper steps={newSteps} />}</Header>
-        <SecondaryHeader />
-      </div>
-      <div className="pt-[160px] md:pt-[199px] flex items-center justify-center pb-[100px] max-w-[1280px] mx-auto px-6 xl:px-0">
-        <Outlet />
-      </div>
-    </div>
+    <AuthOnboardingLayout
+      headerContent={!isWelcomePage && <Stepper steps={newSteps} />}
+    >
+      <Outlet />
+    </AuthOnboardingLayout>
   );
 }
 

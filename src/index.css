@@ -3,18 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --color-bg:#FAF2E8;
-  --color-danger:#FFADAD;
-  --color-success:#6BB84F;
-  --color-neutral:#FFFFFF;
-  --color-warning:#F8D6B3;
-  --color-black:#000000
+  --color-bg: #faf2e8;
+  --color-danger: #ffadad;
+  --color-success: #6bb84f;
+  --color-neutral: #ffffff;
+  --color-warning: #f8d6b3;
+  --color-black: #000000;
+  --color-purple: #5f4fe6;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,6 +23,27 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--color-black);
+  opacity: 0.5;
+  font-family: "Onest", sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  display: block;
+  width: max-content;
+}
+a:hover {
+  text-decoration: none;
+}
+button {
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: scale(1.03);
 }

@@ -5,12 +5,11 @@ import Button from "../button/button";
 
 export interface ModalProps extends BaseComponentProps {
   close?: () => void;
-  hideCloseBtn?: boolean;
   disableClose?: boolean;
 }
 
 function Modal(props: ModalProps) {
-  const { children, close, hideCloseBtn, disableClose } = props;
+  const { children, close, disableClose } = props;
   const [isExit, setIsExit] = useState(false);
 
   const closeModal = useCallback(() => {
@@ -52,7 +51,7 @@ function Modal(props: ModalProps) {
           isExit ? "fade-out-up-big" : "fade-in-up-big"
         )}
       >
-        {!hideCloseBtn && (
+        {!disableClose && (
           <Button
             onClick={closeModal}
             className="absolute right-0 top-0 m-7 bg-red-50 capitalize text-black px-[10px]"

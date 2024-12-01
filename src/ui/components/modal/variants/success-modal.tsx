@@ -15,21 +15,10 @@ export interface SuccessModalProps extends ModalProps {
 }
 
 function SuccessModal(props: SuccessModalProps) {
-  const {
-    title,
-    description,
-    buttonConfig,
-    close,
-    disableClose,
-    hideCloseBtn,
-  } = props;
+  const { title, description, buttonConfig, disableClose, close } = props;
 
   return (
-    <Modal
-      close={close}
-      disableClose={disableClose}
-      hideCloseBtn={hideCloseBtn}
-    >
+    <Modal close={close} disableClose={disableClose}>
       <ModalCard icon={<SealCheck />} title={title} description={description}>
         {buttonConfig && (
           <Button

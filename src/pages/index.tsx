@@ -9,7 +9,7 @@ export default function Root() {
   useEffect(() => {
     const tId = setTimeout(() => {
       setShowLoader(false);
-    }, 4800);
+    }, 2400);
 
     return () => clearTimeout(tId);
   }, []);

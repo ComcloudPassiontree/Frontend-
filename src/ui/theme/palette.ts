@@ -4,7 +4,7 @@ const palette = {
   white: "var(--color-neutral)",
   active: "var(--color-warning)",
   black: "var(--color-black)",
-  purple: "#5F4FE6",
+  purple: "var(--color-purple)",
   charcoal: "#222222",
   red: {
     50:"#FFC9C9",
@@ -21,7 +21,7 @@ const palette = {
   grey: {
     100: "#F4F4F4",
     200: "#E3E3E3",
-    300: "#D3D3D3",
+    300: "#D9D9D9",
     400: "#CDCDCD",
     500: "#B3B3B3",
   },
