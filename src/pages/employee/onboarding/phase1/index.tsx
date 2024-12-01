@@ -1,8 +1,6 @@
 import { memo } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../../../../ui/components/header/header";
 import Stepper from "../../../../ui/components/stepper/stepper";
-import SecondaryHeader from "../../../../ui/components/header/secondary-header";
 import { StepperEnums } from "../../../../ui/components/stepper/types";
 import { useLocation } from "react-router-dom";
 import AuthOnboardingLayout from "../../../../ui/layouts/auth-onboarding-layout";
