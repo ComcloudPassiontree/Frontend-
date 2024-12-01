@@ -2,7 +2,7 @@ import { memo } from "react";
 import H1 from "../../../ui/components/typography/headings/h1";
 import Paragraph1 from "../../../ui/components/typography/paragraphs/p1";
 import Input from "../../../ui/components/form/input/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Caption from "../../../ui/components/typography/caption";
 import Checkbox from "../../../ui/components/form/checkbox/checkbox";
 import Button from "../../../ui/components/button/button";
@@ -11,6 +11,7 @@ import { ReactComponent as Ymail } from "../../../assets/images/ymail.svg";
 import Paragraph2 from "../../../ui/components/typography/paragraphs/p2";
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <div className="mt-1 w-full xl:w-[76%] flex flex-col gap-4 md:gap-[0px] md:flex-row justify-left fade-in-up delay1">
       <div className="w-full md:w-1/2 md:border-r border-grey-300 md:pr-[76px]">
@@ -20,7 +21,13 @@ function Login() {
           two-factor authentication before you can log in.
         </Paragraph1>
 
-        <form className="mt-6">
+        <form
+          className="mt-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            navigate("/auth/verify");
+          }}
+        >
           <Input label="Email Address" placeholder="name@example.com" />
           <Input label="Password" type="password" className="mt-6" />
           <Link to="/auth/forgot-password" className="mt-2">

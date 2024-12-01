@@ -16,7 +16,7 @@ function BackButton(props: Props) {
     <Link
       to={appendUrlParts(to)}
       className={clsx(
-        "flex items-center transition gap-2 -ml-0 hover:-ml-[3px] w-max",
+        "flex items-center transition gap-2 -ml-0 hover:-ml-[3px] w-max no-underline",
         className
       )}
     >

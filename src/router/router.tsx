@@ -10,6 +10,8 @@ import Error404 from "../pages/error/error-404";
 import CreatePassword from "../pages/employee/onboarding/phase1/create-password";
 import Login from "../pages/auth/login";
 import Auth from "../pages/auth";
+import VerifyLogin from "../pages/auth/verify-login";
+import ForgotPassword from "../pages/auth/forgot-password";
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const routes = createBrowserRouter([
           {
             path: "login",
             element: <Login />,
+          },
+          {
+            path: "verify",
+            element: <VerifyLogin />,
+          },
+          {
+            path: "forgot-password",
+            element: <ForgotPassword />,
           },
         ],
       },
