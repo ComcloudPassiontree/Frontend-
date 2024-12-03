@@ -7,7 +7,6 @@ import { BaseInputComponentProps } from "../../../types";
 
 interface Props extends BaseInputComponentProps {
   inputStyle?: CSSProperties;
-  label?: string | number;
 }
 
 function PhoneInput(props: Props) {

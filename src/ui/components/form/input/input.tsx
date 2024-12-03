@@ -2,21 +2,22 @@ import { CSSProperties, memo, useState } from "react";
 import useInput from "./hooks/useInput";
 import clsx from "clsx";
 import { BaseInputComponentProps } from "../../types";
-import { ReactComponent as PasswordOn } from "../../../../assets/images/password-on.svg";
-import { ReactComponent as PasswordOff } from "../../../../assets/images/password-off.svg";
+import { extractTextClasses } from "../../../../helpers/utils";
+import InputIcon from "./input-icon/input-icon";
 
 export interface InputProps extends BaseInputComponentProps {
   inputStyle?: CSSProperties;
 }
 
 function Input(props: InputProps) {
-  const { className, style, inputStyle, type } = props;
+  const { className, style, inputStyle, type, disabled } = props;
   const {
     classes,
     getInputLabel,
     isPassword,
     getExtraInputContent,
     inputProps,
+    needsIcon,
   } = useInput(props);
 
   const [visibleText, setVisibleText] = useState(isPassword ? false : true);
@@ -26,21 +27,17 @@ function Input(props: InputProps) {
       {getInputLabel()}
       <input
         {...inputProps}
-        className={classes}
+        className={clsx(classes, extractTextClasses(className))}
         style={inputStyle}
         type={isPassword ? (visibleText ? "text" : "password") : type}
       />
-      {isPassword && (
-        <div
-          onClick={() => setVisibleText(!visibleText)}
-          className="password-svg absolute right-0 -mt-7 mx-4 cursor-pointer hover:scale-[1.1]"
-        >
-          {!visibleText ? (
-            <PasswordOn />
-          ) : (
-            <PasswordOff className="-mt-[1.7px]" />
-          )}
-        </div>
+      {needsIcon && (
+        <InputIcon
+          onClick={isPassword ? () => setVisibleText(!visibleText) : undefined}
+          visibleText={visibleText}
+          isPassword={isPassword}
+          disabledInput={disabled}
+        />
       )}
 
       {getExtraInputContent()}

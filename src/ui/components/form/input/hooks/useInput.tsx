@@ -7,8 +7,18 @@ import clsx from "clsx";
 import { removeCustomProps } from "../../utils";
 
 function useInput(props: BaseInputComponentProps) {
-  const { label, type, hasError, errorText, hasSuccess, successText } = props;
+  const {
+    label,
+    type,
+    hasError,
+    errorText,
+    hasSuccess,
+    successText,
+    disabled,
+  } = props;
   const isPassword = type === "password";
+
+  const needsIcon = isPassword || disabled;
 
   const classes = clsx(
     hasError
@@ -17,7 +27,8 @@ function useInput(props: BaseInputComponentProps) {
       ? "border-green-300"
       : "border-black",
     (hasError || hasSuccess) && "outline-none",
-    "border-[1.3px] bg-transparent py-[8.5px] px-3 text-[14px] rounded-[8px] mt-[8px] w-full h-[40px]"
+    "border-[1.3px] px-3 text-[14px] rounded-[8px] mt-[8px] w-full h-[40px]",
+    disabled ? "bg-grey-300" : "bg-transparent py-[8.5px]"
   );
 
   const getInputLabel = useCallback(() => {
@@ -51,6 +62,7 @@ function useInput(props: BaseInputComponentProps) {
     isPassword,
     getExtraInputContent,
     inputProps,
+    needsIcon,
   };
 }
 

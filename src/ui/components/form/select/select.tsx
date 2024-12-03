@@ -5,7 +5,6 @@ import { BaseInputComponentProps } from "../../types";
 
 interface Props extends BaseInputComponentProps {
   selectStyle?: CSSProperties;
-  label?: string | number;
 }
 
 function Select(props: Props) {
