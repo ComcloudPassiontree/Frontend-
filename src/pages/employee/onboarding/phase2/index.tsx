@@ -4,32 +4,13 @@ import Stepper from "../../../../ui/components/stepper/stepper";
 import { StepperEnums } from "../../../../ui/components/stepper/types";
 import { useLocation } from "react-router-dom";
 import AuthOnboardingLayout from "../../../../ui/layouts/auth-onboarding-layout";
+import { PHASE_2_STEPS } from "./utils";
+import a1 from "../../../../assets/images/a1.png"
+import a3 from "../../../../assets/images/a3.png"
 
-const steps = [
-  {
-    id: "personal-information",
-    title: "Personal Information",
-    status: StepperEnums.active,
-  },
-  {
-    id: "phone-verification",
-    title: "Phone Number Verification",
-    status: StepperEnums.pending,
-  },
-  {
-    id: "job-details",
-    title: "Job Details and Residence",
-    status: StepperEnums.pending,
-  },
-  {
-    id: "create-password",
-    title: "Create Password",
-    status: StepperEnums.pending,
-  },
-];
-
-function Phase1() {
+function Phase2() {
   const location = useLocation();
+  const steps = PHASE_2_STEPS;
 
   const isWelcomePage = location.pathname.includes("welcome");
   const currentPage = steps.filter((item) =>
@@ -52,12 +33,19 @@ function Phase1() {
 
   return (
     <AuthOnboardingLayout
-      className="pt-[160px] md:pt-[199px]"
-      headerContent={!isWelcomePage && <Stepper steps={newSteps} />}
+      className="pt-[100px] md:pt-[135px]"
+      disableSecondaryHeader
+      headerContent={
+        <div className="flex h-fit items-center justify-between">
+          {!isWelcomePage && <Stepper steps={newSteps} tighter />}
+          {isWelcomePage ? <img src={a1} alt="me" style={{height:60}} className="ml-auto"/> :
+          <img src={a3} alt="me" style={{height:60}}/>}
+        </div>
+      }
     >
       <Outlet />
     </AuthOnboardingLayout>
   );
 }
 
-export default memo(Phase1);
+export default memo(Phase2);

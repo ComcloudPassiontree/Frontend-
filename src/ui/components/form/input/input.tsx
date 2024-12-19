@@ -10,7 +10,7 @@ export interface InputProps extends BaseInputComponentProps {
 }
 
 function Input(props: InputProps) {
-  const { className, style, inputStyle, type, disabled } = props;
+  const { className, style, inputStyle, type, disabled, isLoading } = props;
   const {
     classes,
     getInputLabel,
@@ -37,6 +37,7 @@ function Input(props: InputProps) {
           visibleText={visibleText}
           isPassword={isPassword}
           disabledInput={disabled}
+          isLoading={isLoading}
         />
       )}
 

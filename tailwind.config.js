@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import palette, { variants } from "./src/ui/theme/palette"
+import palette from "./src/ui/theme/palette"
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       colors: {
         ...palette,
-        ...variants
       },
     },
     fontFamily: {

@@ -27,7 +27,8 @@ code {
     monospace;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: var(--color-black);
   opacity: 0.5;
   font-family: "Onest", sans-serif;

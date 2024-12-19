@@ -6,7 +6,7 @@ import { ReactComponent as CheckIcon } from "../../../../../../src/assets/images
 import clsx from "clsx";
 import { removeCustomProps } from "../../utils";
 
-function useInput(props: BaseInputComponentProps) {
+function useInput(props: BaseInputComponentProps, isTextarea = false) {
   const {
     label,
     type,
@@ -15,10 +15,11 @@ function useInput(props: BaseInputComponentProps) {
     hasSuccess,
     successText,
     disabled,
+    isLoading,
   } = props;
   const isPassword = type === "password";
 
-  const needsIcon = isPassword || disabled;
+  const needsIcon = isPassword || disabled || isLoading;
 
   const classes = clsx(
     hasError
@@ -27,8 +28,10 @@ function useInput(props: BaseInputComponentProps) {
       ? "border-green-300"
       : "border-black",
     (hasError || hasSuccess) && "outline-none",
-    "border-[1.3px] px-3 text-[14px] rounded-[8px] mt-[8px] w-full h-[40px]",
-    disabled ? "bg-grey-300" : "bg-transparent py-[8.5px]"
+    "border-[1.3px] px-3 text-[14px] rounded-[8px] mt-[8px] w-full",
+    isTextarea ? "h-[120px]" : "h-[40px]",
+    disabled ? "bg-grey-300" : "bg-transparent py-[8.5px]",
+    "min-w-[150px]"
   );
 
   const getInputLabel = useCallback(() => {

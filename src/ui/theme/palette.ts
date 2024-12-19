@@ -6,6 +6,10 @@ const palette = {
   black: "var(--color-black)",
   purple: "var(--color-purple)",
   charcoal: "#222222",
+  buttons__bg:"var(--color-bg)",
+  buttons__primary: "var(--color-purple)",
+  buttons__white: "var(--color-neutral)",
+  buttons__warning: "#F8E5CF",
   red: {
     50:"#FFC9C9",
     100: "#FC5555",

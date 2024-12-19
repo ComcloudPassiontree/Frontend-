@@ -4,7 +4,9 @@
   opacity: 0;
   z-index: -1; /* Keeps the input from interfering visually */
 }
-
+.small {
+  transform: scale(0.9);
+}
 /* Style the span that will act as the custom checkbox */
 .app-checkbox span {
   display: inline-block;

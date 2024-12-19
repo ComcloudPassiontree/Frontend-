@@ -5,16 +5,17 @@ import Paragraph2 from "../../typography/paragraphs/p2";
 import "./style.css";
 
 interface Props extends BaseInputComponentProps {
-  label?: string;
+  small?: boolean;
 }
 
 function Checkbox(props: Props) {
-  const { label, className } = props;
+  const { label, className, small } = props;
 
   return (
     <label
       className={clsx(
         className,
+        small && "small",
         "flex gap-[10px] items-center app-checkbox cursor-pointer relative"
       )}
     >

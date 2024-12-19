@@ -8,14 +8,16 @@ interface Props extends BaseInputComponentProps {
 }
 
 function Select(props: Props) {
-  const { selectStyle, className, style } = props;
+  const { selectStyle, className, style, value } = props;
   const { classes, getInputLabel, getExtraInputContent } = useInput(props);
 
   return (
     <div className={clsx("flex-grow", className)} style={style}>
       {getInputLabel()}
       <select style={selectStyle} className={classes}>
-        <option>Select</option>
+        {
+          value ?  <option>{value}</option> :  <option>Select</option>
+        }
       </select>
 
       {getExtraInputContent?.()}
