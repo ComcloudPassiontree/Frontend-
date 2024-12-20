@@ -3,7 +3,6 @@ import Button from "../../../../../ui/components/button/button";
 import Checkbox from "../../../../../ui/components/form/checkbox/checkbox";
 import H1 from "../../../../../ui/components/typography/headings/h1";
 import H4 from "../../../../../ui/components/typography/headings/h4";
-import Paragraph1 from "../../../../../ui/components/typography/paragraphs/p1";
 import { useState } from "react";
 import Paragraph2 from "../../../../../ui/components/typography/paragraphs/p2";
 import toast from "../../../../../helpers/toasts/toasts";

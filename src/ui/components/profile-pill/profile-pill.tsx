@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react";
+import { memo, useState } from "react";
 import Paragraph2 from "../typography/paragraphs/p2";
 import user from "../../../assets/images/user.png";
 import { ReactComponent as Drop } from "../../../assets/images/account_drop.svg";

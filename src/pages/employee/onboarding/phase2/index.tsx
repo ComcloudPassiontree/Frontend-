@@ -39,7 +39,7 @@ function Phase2() {
       className="pt-[100px] md:pt-[135px]"
       disableSecondaryHeader
       headerContent={
-        <div className="flex h-fit items-center justify-between">
+        <div className="flex h-fit items-center justify-between gap-3">
           {!doNotShowStepper && <Stepper steps={newSteps} tighter />}
           <div
             className={clsx(

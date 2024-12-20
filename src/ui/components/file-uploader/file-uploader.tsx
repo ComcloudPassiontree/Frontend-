@@ -1,4 +1,4 @@
-import React, { memo, useRef } from "react";
+import { memo, useRef } from "react";
 import { BaseComponentProps } from "../types";
 import clsx from "clsx";
 import Paragraph1 from "../typography/paragraphs/p1";
@@ -10,7 +10,7 @@ interface Props extends BaseComponentProps {
 }
 
 function FileUploader(props: Props) {
-  const { className, label } = props;
+  const { className } = props;
   const inputRef = useRef<HTMLInputElement>(null!);
 
   return (
