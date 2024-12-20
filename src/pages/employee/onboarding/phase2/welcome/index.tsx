@@ -7,7 +7,7 @@ import TimeLeftCounter from "../../../../../ui/components/time-left-counter/time
 function Welcome() {
   return (
     <div>
-      <div className="fade-in mt-6 flex items-center flex-col md:w-[562px] text-center w-full">
+      <div className="fade-in mt-9 flex items-center flex-col md:w-[562px] text-center w-full">
         <H1 bold>Hi Pinkett,</H1>
         <h2 className="-mt-4 text-[40px] md:text-[64px] font-[900] font-primary">
           WELCOME BACK!
@@ -23,7 +23,7 @@ function Welcome() {
           <TextPill counter={4}>Confirm your Data</TextPill>
         </div>
       </div>
-      <div className="bg-purple w-full h-[120px] absolute left-0 bottom-0 border-t-2 border-black flex items-center justify-between px-[80px]">
+      <div className="flex flex-wrap bg-purple w-full h-[256px] flex-col md:flex-row gap-4 md:h-[120px] absolute left-0 bottom-0 border-t-2 border-black flex items-center justify-center md:justify-between px-[10px] lg:px-[80px]">
         <TimeLeftCounter />
         <Button to="personal-details" variant="white" className="w-[240px]">
           Continue

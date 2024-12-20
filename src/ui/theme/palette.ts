@@ -5,6 +5,7 @@ const palette = {
   active: "var(--color-warning)",
   black: "var(--color-black)",
   purple: "var(--color-purple)",
+  secondaryPurple:"#B69BFC",
   charcoal: "#222222",
   buttons__bg:"var(--color-bg)",
   buttons__primary: "var(--color-purple)",
@@ -23,6 +24,10 @@ const palette = {
   },
   blue: "#0099FF",
   pending: "#FFFFFF",
+  yellow:{
+    100:"#FEFFC9",
+    200:"#F5F79A"
+  },
   grey: {
     100: "#F4F4F4",
     200: "#E3E3E3",

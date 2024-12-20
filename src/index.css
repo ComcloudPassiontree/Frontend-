@@ -54,3 +54,13 @@ button:hover {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+
+.center_all {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+img {
+  max-width: unset;
+}

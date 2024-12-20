@@ -15,7 +15,8 @@ function TextPill(props: Props) {
       {...rest}
       className={clsx(
         className,
-        "px-[11px] py-[6px] rounded-[8px] border-black border-[2px] inline-block w-max font-[700]"
+        "px-[11px] py-[6px] rounded-[8px] border-black border-[2px] inline-block font-[700]",
+        !className?.includes("w-") && "w-max"
       )}
     >
       {typeof children !== "string" ? (

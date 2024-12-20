@@ -24,7 +24,7 @@ function AuthOnboardingLayout(props: Props) {
       </div>
       <div
         className={clsx(
-          "flex items-center justify-center pb-[100px] max-w-[1240px] mx-auto px-6 xl:px-0",
+          "flex items-center justify-center pb-[100px] max-w-[1280px] mx-auto px-6 xl:px-0",
           className
         )}
       >

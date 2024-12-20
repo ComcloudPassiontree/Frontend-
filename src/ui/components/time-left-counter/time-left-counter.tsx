@@ -18,9 +18,9 @@ function TimeLeftCounter() {
   }, [timeLeft]);
 
   return (
-    <div className="h-[72px] flex gap-2">
-      <TextPill className="bg-active">
-        <div className="flex m-1">
+    <div className="h-[auto] flex md:gap-2 flex-wrap md:flex-nowrap w-[300px] md:w-[600px]">
+      <TextPill className="bg-active w-full block">
+        <div className="flex m-1 justify-between">
           <Paragraph1 bold>
             Time left to <br />
             Complete application
@@ -28,10 +28,12 @@ function TimeLeftCounter() {
           <Alarm className="ml-2" />
         </div>
       </TextPill>
-      <CounterCard number={13} duration="Days" />
-      <CounterCard number={23} duration="Hours" />
-      <CounterCard number={19} duration="Mins" />
-      <CounterCard number={timeLeft} duration="Sec" />
+      <div className="w-full flex md:gap-2 justify-between">
+        <CounterCard number={13} duration="Days" />
+        <CounterCard number={23} duration="Hours" />
+        <CounterCard number={19} duration="Mins" />
+        <CounterCard number={timeLeft} duration="Sec" />
+      </div>
     </div>
   );
 }
