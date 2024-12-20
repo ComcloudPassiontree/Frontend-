@@ -4,11 +4,7 @@ import Paragraph1 from "../../../ui/components/typography/paragraphs/p1";
 import TextPill from "../text-pill/text-pill";
 import CounterCard from "./components/counter-card";
 
-interface Props {}
-
-function TimeLeftCounter(props: Props) {
-  const {} = props;
-
+function TimeLeftCounter() {
   const [timeLeft, setTimeLeft] = useState(60);
 
   useEffect(() => {

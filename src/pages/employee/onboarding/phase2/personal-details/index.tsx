@@ -13,36 +13,39 @@ import axios from "axios";
 import { useDebounce } from "use-debounce";
 
 function PersonalDetails() {
-  const [data, setData] = useState<{COUNTRY:string, POPULATED_PLACE:string, COUNTY_UNITARY:string, DISTRICT_BOROUGH:string} | null>(null)
+  const [data, setData] = useState<{
+    currentlyStayHere?: boolean;
+  } | null>(null);
+
+  const [fields, setFields] = useState(1);
   const [text, setText] = useState("");
   const [value] = useDebounce(text, 200);
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const key = "A63hpUDz4dwI2HYXSKd9CcVy0sSTmSAP"
-  
-  const getData = (val:string) => {
-    if(val.trim()){
-    setIsLoading(true)
-    axios.get(`https://api.os.uk/search/names/v1/find?query=${val}&key=${key}`)
-    .then(function (response) {
-        /* For explanation and debugging purposes we display the full response from the API in the console */
-        console.log(JSON.stringify(response.data, null, 2));
-        setData(response.data.results[0].GAZETTEER_ENTRY)
-        setIsLoading(false)
-    });
-  }
-  else{
-    setIsLoading(false)
-  }
-  }
+  const key = "A63hpUDz4dwI2HYXSKd9CcVy0sSTmSAP";
+
+  const getData = (val: string) => {
+    if (val.trim()) {
+      setIsLoading(true);
+      axios
+        .get(`https://api.os.uk/search/names/v1/find?query=${val}&key=${key}`)
+        .then(function (response) {
+          // console.log(JSON.stringify(response.data, null, 2));
+          // setData(response.data.results[0].GAZETTEER_ENTRY);
+          setIsLoading(false);
+        });
+    } else {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    if(value?.trim()){
-      getData(value)
+    if (value?.trim()) {
+      getData(value);
     }
-  }, [value])
-  
+  }, [value]);
+
   return (
     <div className="w-full flex flex-col gap-4 md:gap-[0px] md:flex-row justify-left">
       <div className="basis-1/3 mt-1 fade-in">
@@ -64,51 +67,63 @@ function PersonalDetails() {
           <Select label="Gender"></Select>
           <Select label="Marital Status"></Select>
         </div>
+        {[...Array(fields)]?.map((field) => (
+          <div>
+            <H4
+              bold
+              className="mt-[40px] border-b-[1px] border-grey-400 w-full pb-[7px] mb-2"
+            >
+              1 year Residential Address
+            </H4>
+            <Paragraph2>
+              Please provide the residential address(es) to the place you have
+              resided in the last one year.
+            </Paragraph2>
 
-        <H4
-          bold
-          className="mt-[40px] border-b-[1px] border-grey-400 w-full pb-[7px] mb-2"
-        >
-          1 year Residential Address
-        </H4>
-        <Paragraph2>
-          Please provide the residential address(es) to the place you have
-          resided in the last one year.
-        </Paragraph2>
+            <Input
+              className="mt-5"
+              placeholder="Enter Postcode to find address"
+              label="Enter Postcode and Find Address"
+              isLoading={isLoading}
+              onChange={(e) => setText(e.target.value)}
+            />
 
-        <Input
-          className="mt-5"
-          placeholder="Enter Postcode to find address"
-          label="Enter Postcode and Find Address"
-          isLoading={isLoading}
-          onChange={(e) => setText(e.target.value)}
-        />
+            <Input className="mt-5" label="Address Line 1" />
+            <Input className="mt-5" label="Address Line 2" />
 
-        <Input className="mt-5" label="Address Line 1" />
-        <Input className="mt-5" label="Address Line 2" value={data?.DISTRICT_BOROUGH || data?.COUNTY_UNITARY} />
+            <div className="flex gap-[20px] flex-wrap">
+              <Select className="mt-5" label="Country"></Select>
+              <Input className="mt-5" label="City/Town" />
+              <Input label="Council (optional)" />
+              <Input label="Post / Zip Code" />
+            </div>
 
-        <div className="flex gap-[20px] flex-wrap">
-          <Select className="mt-5" label="Country" value={data?.COUNTRY}></Select>
-          <Input className="mt-5" label="City/Town" value={data?.POPULATED_PLACE}/>
-          <Input label="Council (optional)" />
-          <Input label="Post / Zip Code" />
-        </div>
-
-        <div className="flex gap-[20px] flex-wrap">
-          <div className="w-1/2">
-            <Input className="mt-5" label="Date moved in" type="date" />
+            <div className="flex gap-[20px] flex-wrap">
+              <div className="w-1/2">
+                <Input className="mt-5" label="Date moved in" type="date" />
+              </div>
+              <Checkbox
+                onChange={() =>
+                  setData({
+                    currentlyStayHere: !data?.currentlyStayHere,
+                  })
+                }
+                className="mt-[54px]"
+                label={<Paragraph2 bold>I currently stay here</Paragraph2>}
+              />
+            </div>
+            {!data?.currentlyStayHere && (
+              <div className="w-1/2">
+                <Input className="mt-5" label="Date moved out" type="date" />
+              </div>
+            )}
           </div>
-          <Checkbox
-            small
-            className="mt-[44px]"
-            label={<Paragraph2 bold>I currently stay here</Paragraph2>}
-          />
-        </div>
-
+        ))}
         <div className="mt-[20px]">
           <hr className="border-b-1 border-grey-300" />
           <Paragraph1
             bold
+            onClick={() => setFields(fields + 1)}
             className="cursor-pointer underline flex items-center gap-2 w-full text-center justify-center mt-10"
           >
             <PlusCircle /> Add New Address

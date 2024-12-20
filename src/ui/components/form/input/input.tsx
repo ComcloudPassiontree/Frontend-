@@ -23,7 +23,14 @@ function Input(props: InputProps) {
   const [visibleText, setVisibleText] = useState(isPassword ? false : true);
 
   return (
-    <div className={clsx("flex-grow relative", className)} style={style}>
+    <div
+      className={clsx(
+        "relative",
+        className,
+        !className?.includes("grow") && "flex-grow"
+      )}
+      style={style}
+    >
       {getInputLabel()}
       <input
         {...inputProps}

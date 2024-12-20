@@ -10,8 +10,12 @@ import H3 from "../../../../../ui/components/typography/headings/h3";
 import Input from "../../../../../ui/components/form/input/input";
 import Checkbox from "../../../../../ui/components/form/checkbox/checkbox";
 import Textarea from "../../../../../ui/components/form/input/textarea/textarea";
+import { useState } from "react";
 
 function WorkExperience() {
+  const [fields, setFields] = useState(1);
+  const [data, setData] = useState({ inprogress: false });
+
   return (
     <div className="w-full flex flex-col gap-4 md:gap-[0px] md:flex-row justify-left">
       <div className="basis-1/3 mt-1 fade-in">
@@ -40,39 +44,53 @@ function WorkExperience() {
           <span className="capitalize underline ml-2">Upload Resume</span>
         </Button>
 
-        <H3
-          bold
-          className="mt-[24px] border-b-[1px] border-grey-400 w-full pb-[7px] mb-2"
-        >
+        <H3 bold className="mt-[24px] w-full">
           Upload Manually
         </H3>
+        {[...Array(fields)]?.map((field) => (
+          <div className="mt-6">
+            <hr className="border-b-1 border-grey-400" />
 
-        <Input label="Company" className="mt-4" />
-        <Input label="Job Title" className="mt-4" />
-        <div className="flex gap-[20px] flex-wrap">
-          <Input className="mt-5" label="Start date" type="date" />
-          <Input className="mt-5" label="End date" type="date" />
-        </div>
-        <Checkbox
-          className="mt-3"
-          label={<Paragraph2>I currently work here</Paragraph2>}
-        />
-        <Textarea
-          label="Description"
-          className="mt-7"
-          placeholder="Describe the job role and your responsibilities."
-        />
+            <Input label="Company" className="mt-4" />
+            <Input label="Job Title" className="mt-4" />
+            <div className="flex gap-[20px] flex-wrap">
+              <Input
+                className="mt-5 w-1/2 grow-0"
+                label="Start date"
+                type="date"
+              />
+              {data?.inprogress && (
+                <Input className="mt-5" label="End date" type="date" />
+              )}
+            </div>
+            <Checkbox
+              className="mt-3"
+              onChange={() =>
+                setData({
+                  inprogress: !data?.inprogress,
+                })
+              }
+              label={<Paragraph2>I currently work here</Paragraph2>}
+            />
+            <Textarea
+              label="Description"
+              className="mt-7"
+              placeholder="Describe the job role and your responsibilities."
+            />
+          </div>
+        ))}
 
         <div className="mt-[20px]">
           <hr className="border-b-1 border-grey-300" />
           <Paragraph1
             bold
+            onClick={() => setFields(fields + 1)}
             className="cursor-pointer underline flex items-center gap-2 w-full text-center justify-center mt-10"
           >
             <PlusCircle /> Add Work Experience
           </Paragraph1>
         </div>
-        <Button to="work-experience" className="mt-8 w-full">
+        <Button to="reference" className="mt-8 w-full">
           Continue
         </Button>
       </div>

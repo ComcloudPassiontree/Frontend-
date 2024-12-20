@@ -18,6 +18,7 @@ function Modal(props: ModalProps) {
     }
     setIsExit(true);
     setTimeout(() => {
+      document.body.style.overflow = "auto";
       close?.();
     }, 300);
   }, [close, disableClose]);
@@ -34,10 +35,14 @@ function Modal(props: ModalProps) {
     };
   }, [closeModal]);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
+
   return (
     <div
       className={clsx(
-        "absolute top-0 w-full h-screen z-10",
+        "fixed top-0 w-full h-screen z-10 bottom-0 left-0 right-0",
         isExit ? "fade-out" : "fade-in"
       )}
     >
@@ -47,14 +52,17 @@ function Modal(props: ModalProps) {
       ></div>
       <div
         className={clsx(
-          "absolute z-11 w-full bg-bg h-auto py-[20px] md:py-[55px] bottom-0",
+          "absolute z-11 w-full bg-bg h-auto py-[20px] md:py-[45px] bottom-0 max-h-[600px] overflow-auto ",
           isExit ? "fade-out-up-big" : "fade-in-up-big"
         )}
       >
+        <div className="bg-bg w-[96%] h-[60px] fixed z-[1] -mt-[20px] block md:hidden"></div>
         {!disableClose && (
           <Button
+            smallText
+            variant="danger"
             onClick={closeModal}
-            className="absolute right-0 top-0 m-7 bg-red-50 capitalize text-black px-[10px]"
+            className="z-[2] fixed right-0 m-7 -mt-2 capitalize px-[10px] text-sm h-[40px]"
           >
             Close
           </Button>

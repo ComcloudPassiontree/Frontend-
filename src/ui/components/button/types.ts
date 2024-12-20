@@ -1,1 +1,1 @@
-export type ButtonVariants = "primary" | "bg" | "white" | "warning"
+export type ButtonVariants = "primary" | "bg" | "white" | "warning" | "text" | "danger"

@@ -10,7 +10,11 @@ export default function Paragraph2(props: Props) {
   return (
     <p
       {...rest}
-      className={clsx(getTypographyClasses(className, bold), "text-[14px]", "leading-[24px]")}
+      className={clsx(
+        getTypographyClasses(className, bold),
+        "text-[14px]",
+        !className?.includes("leading") && "leading-[24px]"
+      )}
       data-testid={testId}
     >
       {children}

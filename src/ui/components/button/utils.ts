@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { ButtonVariants } from "./types";
+import { getTypographyClasses } from "../typography/utils";
 
 export const appendUrlParts = (destination: string) => {
   if (destination.startsWith("/")) {
@@ -12,7 +13,7 @@ export const appendUrlParts = (destination: string) => {
 
 const getVariantClass = (variant: ButtonVariants, disabled?:boolean) => {
   if(disabled){
-    return ["bg-grey-300 text-black"]
+    return ["bg-grey-300 text-white"]
   }
 
   switch (variant) {
@@ -24,6 +25,8 @@ const getVariantClass = (variant: ButtonVariants, disabled?:boolean) => {
       return ["text-black", "bg-buttons__bg"]
       case "white":
         return ["text-black", "bg-buttons__white"]
+        case "danger":
+          return ["text-black", "bg-red-50"]
     default:
       return ["text-black"];
   }
@@ -34,6 +37,9 @@ export const getButtonClasses = (
   className?: string,
   isDisabled?: boolean
 ) => {
+  if(variant === "text"){
+    return clsx("text-[14px] md:text-[16px] underline", getTypographyClasses(className, true))
+  }
   return clsx(
     !className?.includes("h-") && "h-[48px]",
     "app-primary-button",

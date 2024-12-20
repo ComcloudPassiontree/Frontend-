@@ -20,6 +20,10 @@ import WelcomePhase2 from "../pages/employee/onboarding/phase2/welcome";
 import Phase2 from "../pages/employee/onboarding/phase2";
 import PersonalDetails from "../pages/employee/onboarding/phase2/personal-details";
 import WorkExperience from "../pages/employee/onboarding/phase2/work-experience";
+import Reference from "../pages/employee/onboarding/phase2/reference";
+import AcademicHistory from "../pages/employee/onboarding/phase2/academic-history";
+import UploadPassport from "../pages/employee/onboarding/phase2/passport";
+import Acknowledgement from "../pages/employee/onboarding/phase2/acknowledgement";
 
 const routes = createBrowserRouter([
   {
@@ -89,6 +93,22 @@ const routes = createBrowserRouter([
               {
                 path: "work-experience",
                 element: <WorkExperience />,
+              },
+              {
+                path: "reference",
+                element: <Reference />,
+              },
+              {
+                path: "academic-history",
+                element: <AcademicHistory />,
+              },
+              {
+                path: "upload-passport",
+                element: <UploadPassport />,
+              },
+              {
+                path: "acknowledgement",
+                element: <Acknowledgement />,
               },
             ],
           },

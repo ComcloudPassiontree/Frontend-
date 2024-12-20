@@ -10,6 +10,7 @@ const palette = {
   buttons__primary: "var(--color-purple)",
   buttons__white: "var(--color-neutral)",
   buttons__warning: "#F8E5CF",
+  beige:"#F8E5CF",
   red: {
     50:"#FFC9C9",
     100: "#FC5555",

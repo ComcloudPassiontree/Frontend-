@@ -14,6 +14,7 @@ interface Props extends BaseInputComponentProps {
   to?: string;
   disabled?: boolean;
   isLoading?: boolean;
+  smallText?: boolean;
 }
 
 function Button(props: Props) {
@@ -26,6 +27,7 @@ function Button(props: Props) {
     variant = "primary",
     disabled,
     isLoading,
+    smallText,
     ...rest
   } = props;
 
@@ -46,7 +48,10 @@ function Button(props: Props) {
         <Paragraph1
           bold
           className={clsx("text-center flex")}
-          style={{ ...(largeText && { fontSize: 18 }) }}
+          style={{
+            ...(largeText && { fontSize: 18 }),
+            ...(smallText && { fontSize: 13 }),
+          }}
         >
           {isLoading ? <Loader className="animate-spin mx-auto" /> : children}
         </Paragraph1>

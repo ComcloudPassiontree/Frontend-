@@ -33,7 +33,7 @@ function Login() {
           <Link to="/auth/forgot-password" className="mt-2">
             <Caption>Forgot Password?</Caption>
           </Link>
-          <Checkbox label="Remember me on this device" className="mt-6" />
+          <Checkbox large label="Remember me on this device" className="mt-6" />
           <Button className="w-full mt-6">LOG INTO ACCOUNT</Button>
         </form>
       </div>

@@ -4,11 +4,7 @@ import TextPill from "../../../../../ui/components/text-pill/text-pill";
 import Button from "../../../../../ui/components/button/button";
 import TimeLeftCounter from "../../../../../ui/components/time-left-counter/time-left-counter";
 
-interface Props {}
-
-function Welcome(props: Props) {
-  const {} = props;
-
+function Welcome() {
   return (
     <div>
       <div className="fade-in mt-6 flex items-center flex-col md:w-[562px] text-center w-full">
