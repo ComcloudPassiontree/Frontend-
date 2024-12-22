@@ -56,7 +56,6 @@ function Modal(props: ModalProps) {
           isExit ? "fade-out-up-big" : "fade-in-up-big"
         )}
       >
-        <div className="bg-bg w-[96%] h-[60px] fixed z-[1] -mt-[20px] block md:hidden"></div>
         {!disableClose && (
           <Button
             smallText
